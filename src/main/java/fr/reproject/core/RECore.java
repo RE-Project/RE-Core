@@ -1,5 +1,6 @@
 package fr.reproject.core;
 
+import fr.reproject.core.utils.Register;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -11,7 +12,7 @@ public class RECore {
 
     public static final String MODID = "recore";
     public static final String NAME = "§dRE: Core";
-    public static final String VERSION = "1.0.1";
+    public static final String VERSION = "1.0.2";
 
     private static Logger logger;
 
@@ -23,5 +24,8 @@ public class RECore {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         logger.info("Hello World!");
+    }
+
+    public static class Utils extends Register {
     }
 }
