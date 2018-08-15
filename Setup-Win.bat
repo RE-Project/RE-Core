@@ -1,2 +1,2 @@
 gradlew setupDecompWorkspace
-gradlew idea
+

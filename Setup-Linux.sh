@@ -1,2 +1,1 @@
 gradle setupDecompWorkspace
-gradle idea
