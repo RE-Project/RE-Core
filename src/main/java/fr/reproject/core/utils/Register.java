@@ -1,5 +1,6 @@
 package fr.reproject.core.utils;
 
+import fr.reproject.core.REModList;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -18,8 +19,14 @@ public class Register {
         logger.info("Registered Item: " + item.getUnlocalizedName().substring(5));
     }
 
+    @Deprecated
     public static void registerRender(Item item, String modid, Logger logger) {
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(modid, item.getUnlocalizedName().substring(5)), "inventory"));
+        logger.info("Registered render for " + item.getUnlocalizedName().substring(5));
+    }
+
+    public static void registerRender(Item item, int modid, Logger logger) {
+        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(REModList.MODID[modid], item.getUnlocalizedName().substring(5)), "inventory"));
         logger.info("Registered render for " + item.getUnlocalizedName().substring(5));
     }
 
@@ -30,8 +37,14 @@ public class Register {
         logger.info("Registered block: " + block.getUnlocalizedName().substring(5));
     }
 
+    @Deprecated
     public static void registerRender(Block block, String modid, Logger logger) {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(modid, block.getUnlocalizedName().substring(5)), "inventory"));
+        logger.info("Registered render for " + block.getUnlocalizedName().substring(5));
+    }
+
+    public static void registerRender(Block block, int modid, Logger logger) {
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(REModList.MODID[modid], block.getUnlocalizedName().substring(5)), "inventory"));
         logger.info("Registered render for " + block.getUnlocalizedName().substring(5));
     }
 }
