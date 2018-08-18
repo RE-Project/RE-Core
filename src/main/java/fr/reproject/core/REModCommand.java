@@ -5,6 +5,7 @@ import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 
 public class REModCommand extends CommandBase {
 
@@ -35,72 +36,31 @@ public class REModCommand extends CommandBase {
 
         //default page / page 1
         if (args.length == 0) {
-            sender.sendMessage(new TextComponentString("§aList of mod Load in §dRE: Core"));
+            sender.sendMessage(new TextComponentString("List of mod Load in RE: Core"));
             for (int i = 0; i <= 9; i++) {
-                sender.sendMessage(new TextComponentString("§a id: §e" + i + "§a | ModID: §e" + modid[i] + "§a | ModName: §e" + modname[i]));
+                sender.sendMessage(new TextComponentString(" id: " + i + " | ModID: " + modid[i] + " | ModName: " + modname[i]));
                 if (i >= numberOfMod - 1) {
                     i = 9;
                 }
             }
-            sender.sendMessage(new TextComponentString("§aPage 1/" + numberOfPage));
+            sender.sendMessage(new TextComponentString("Page 1/" + numberOfPage));
         }
 
         //disp all page
         if (args.length == 1 && args[0] != null) {
             int max = page(parseInt(args[0]));
             if(parseInt(args[0]) <= numberOfPage) {
-                sender.sendMessage(new TextComponentString("§aList of mod Load in §dRE: Core"));
+                sender.sendMessage(new TextComponentString("List of mod Load in RE: Core"));
                 for (int i = max - 9; i <= max; i++) {
-                    sender.sendMessage(new TextComponentString("§a id: §e" + i + "§a | ModID: §e" + modid[i] + "§a | ModName: §e" + modname[i]));
+                    sender.sendMessage(new TextComponentString("id: " + i + " | ModID: " + modid[i] + " | ModName: " + modname[i]));
                     if (i >= numberOfMod - 1) {
                         i = max;
                     }
                 }
-                sender.sendMessage(new TextComponentString("§aPage " + args[0] + "/" + numberOfPage));
+                sender.sendMessage(new TextComponentString("Page " + args[0] + "/" + numberOfPage));
             } else {
-                sender.sendMessage(new TextComponentString("§4Invalide Argument"));
+                sender.sendMessage(new TextComponentString("Invalide Argument"));
             }
         }
-
-
-        /*
-        if (args.length == 1 && args[0] != null) {
-            //page 1
-            if (parseInt(args[0]) == 1) {
-                sender.sendMessage(new TextComponentString("§aList of mod Load in §dRE: Core"));
-                for (int i = 0; i <= 9; i++) {
-                    sender.sendMessage(new TextComponentString("§a id: §e" + i + "§a | ModID: §e" + modid[i] + "§a | ModName: §e" + modname[i]));
-                    if (i >= numberOfMod - 1) {
-                        i = 9;
-                    }
-                }
-                sender.sendMessage(new TextComponentString("§aPage 1/" + numberOfPage));
-            }
-
-            //page 2
-            if (parseInt(args[0]) == 2) {
-                sender.sendMessage(new TextComponentString("§aList of mod Load in §dRE: Core"));
-                for (int i = 9; i <= 19; i++) {
-                    sender.sendMessage(new TextComponentString("§a id: §e" + i + "§a | ModID: §e" + modid[i] + "§a | ModName: §e" + modname[i]));
-                    if (i >= numberOfMod - 1) {
-                        i = 19;
-                    }
-                }
-                sender.sendMessage(new TextComponentString("§aPage 2/" + numberOfPage));
-            }
-
-            //page 3
-            if (parseInt(args[0]) == 3) {
-                sender.sendMessage(new TextComponentString("§aList of mod Load in §dRE: Core"));
-                for (int i = 19; i <= 29; i++) {
-                    sender.sendMessage(new TextComponentString("§a id: §e" + i + "§a | ModID: §e" + modid[i] + "§a | ModName: §e" + modname[i]));
-                    if (i >= numberOfMod - 1) {
-                        i = 29;
-                    }
-                }
-                sender.sendMessage(new TextComponentString("§aPage 3/" + numberOfPage));
-            }
-
-        }*/
     }
 }
