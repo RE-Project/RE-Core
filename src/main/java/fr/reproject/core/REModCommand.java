@@ -18,11 +18,19 @@ public class REModCommand extends CommandBase {
         return "remod <page>";
     }
 
+    private int page(int page) {
+        if(page == 1) {
+            return 9;
+        } else {
+            return (9 + 1) * page;
+        }
+    }
+
     @Override
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
         String[] modid = REModList.MODID;
         String[] modname = REModList.MODNAME;
-        int numberOfMod = modid.length;
+        int numberOfMod = REModList.numberOfMod;
         int numberOfPage = numberOfMod / 10 + 1;
 
         //default page / page 1
@@ -37,6 +45,25 @@ public class REModCommand extends CommandBase {
             sender.sendMessage(new TextComponentString("§aPage 1/" + numberOfPage));
         }
 
+        //disp all page
+        if (args.length == 1 && args[0] != null) {
+            int max = page(parseInt(args[0]));
+            if(parseInt(args[0]) <= numberOfPage) {
+                sender.sendMessage(new TextComponentString("§aList of mod Load in §dRE: Core"));
+                for (int i = max - 9; i <= max; i++) {
+                    sender.sendMessage(new TextComponentString("§a id: §e" + i + "§a | ModID: §e" + modid[i] + "§a | ModName: §e" + modname[i]));
+                    if (i >= numberOfMod - 1) {
+                        i = max;
+                    }
+                }
+                sender.sendMessage(new TextComponentString("§aPage " + args[0] + "/" + numberOfPage));
+            } else {
+                sender.sendMessage(new TextComponentString("§4Invalide Argument"));
+            }
+        }
+
+
+        /*
         if (args.length == 1 && args[0] != null) {
             //page 1
             if (parseInt(args[0]) == 1) {
@@ -73,6 +100,7 @@ public class REModCommand extends CommandBase {
                 }
                 sender.sendMessage(new TextComponentString("§aPage 3/" + numberOfPage));
             }
-        }
+
+        }*/
     }
 }

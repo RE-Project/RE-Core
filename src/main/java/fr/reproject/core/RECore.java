@@ -11,16 +11,17 @@ import org.apache.logging.log4j.Logger;
 @Mod(modid = RECore.MODID, name = RECore.NAME, version = RECore.VERSION)
 public class RECore {
 
-    public static final int modid = 0;
+    public static int modid;
     public static final String MODID = "recore";
     public static final String NAME = "§dRE: Core";
-    public static final String VERSION = "1.0.3";
+    public static final String VERSION = "1.0.3.2";
 
     public static Logger logger;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
+        modid = REModList.loadMod(MODID, NAME);
         REModList.initLoadMod(modid);
     }
 
