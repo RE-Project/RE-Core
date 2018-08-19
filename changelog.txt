@@ -1,4 +1,8 @@
--1.0.3.2
+-1.0.3.4
+fix color bug and remake the command output for the remod command
+-1.0.3.3
+remove color in the remod command
+-1.0.3.2/1.0.3.1
 Fix crash wen using loading systems for mod
 -1.0.3
 add loading systems for mod

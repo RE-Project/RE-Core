@@ -4,7 +4,7 @@
 <ol>
     <li>Importe Utils.
         <ul>
-            <li>(Java Code) <font color="red">import</font> <font color="blue">fr.reproject.core.RECore</font>;</li>
+            <li>(Java Code) <font color="red">import</font> <font color="blue">fr.reproject.core.utils.Register;</font>;</li>
         </ul>
     </li><br>
     <li>Use The Utils
@@ -18,20 +18,20 @@
             <li>Register your items</li><br>
 
             <font color="red">public static</font> <font color="blue">void</font> <font color="green">registerItems()</font>* {<br>
-                RECore.Utils.<font color="blue">registerItem</font>(<font color="purple">Your_Item_1</font>, <font color="purple">Your_Creative_Tab</font>, <font color="purple">Your_Looger</font>);<br>
-                RECore.Utils.<font color="blue">registerItem</font>(<font color="purple">Your_Item_2</font>, <font color="purple">Your_Creative_Tab</font>, <font color="purple">Your_Looger</font>);<br>
-                RECore.Utils.<font color="blue">registerItem</font>(<font color="purple">Your_Item_3</font>, <font color="purple">Your_Creative_Tab</font>, <font color="purple">Your_Looger</font>);<br>
-                RECore.Utils.<font color="blue">registerItem</font>(<font color="purple">Your_Item_4</font>, <font color="purple">Your_Creative_Tab</font>, <font color="purple">Your_Looger</font>);<br>
+                Register.<font color="blue">registerItem</font>(<font color="purple">Your_Item_1</font>, <font color="purple">Your_Creative_Tab</font>, <font color="purple">Your_Looger</font>);<br>
+                Register.<font color="blue">registerItem</font>(<font color="purple">Your_Item_2</font>, <font color="purple">Your_Creative_Tab</font>, <font color="purple">Your_Looger</font>);<br>
+                Register.<font color="blue">registerItem</font>(<font color="purple">Your_Item_3</font>, <font color="purple">Your_Creative_Tab</font>, <font color="purple">Your_Looger</font>);<br>
+                Register.<font color="blue">registerItem</font>(<font color="purple">Your_Item_4</font>, <font color="purple">Your_Creative_Tab</font>, <font color="purple">Your_Looger</font>);<br>
             }<br>
             * You need to load this function aftre init this items in the forge preInit <br>
 
             <li>Register your renders</li><br>
 
             <font color="red">public static</font> <font color="blue">void</font> <font color="green">registerRenders()</font>* {<br>
-                    RECore.Utils.<font color="blue">registerRender</font>(<font color="purple">Your_Item_1</font>, <font color="purple">Your_ModID</font>, <font color="purple">Your_Looger</font>);<br>
-                    RECore.Utils.<font color="blue">registerRender</font>(<font color="purple">Your_Item_2</font>, <font color="purple">Your_ModID</font>, <font color="purple">Your_Looger</font>);<br>
-                    RECore.Utils.<font color="blue">registerRender</font>(<font color="purple">Your_Item_3</font>, <font color="purple">Your_ModID</font>, <font color="purple">Your_Looger</font>);<br>
-                    RECore.Utils.<font color="blue">registerRender</font>(<font color="purple">Your_Item_4</font>, <font color="purple">Your_ModID</font>, <font color="purple">Your_Looger</font>);<br>
+                    Register.<font color="blue">registerRender</font>(<font color="purple">Your_Item_1</font>, <font color="purple">Your_ModID</font>, <font color="purple">Your_Looger</font>);<br>
+                    Register.<font color="blue">registerRender</font>(<font color="purple">Your_Item_2</font>, <font color="purple">Your_ModID</font>, <font color="purple">Your_Looger</font>);<br>
+                    Register.<font color="blue">registerRender</font>(<font color="purple">Your_Item_3</font>, <font color="purple">Your_ModID</font>, <font color="purple">Your_Looger</font>);<br>
+                    Register.<font color="blue">registerRender</font>(<font color="purple">Your_Item_4</font>, <font color="purple">Your_ModID</font>, <font color="purple">Your_Looger</font>);<br>
             }<br>
             * You need to load this function aftre are register this items in the forge preInit<br>
         </ul>
