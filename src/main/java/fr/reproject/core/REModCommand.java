@@ -36,30 +36,34 @@ public class REModCommand extends CommandBase {
 
         //default page / page 1
         if (args.length == 0) {
-            sender.sendMessage(new TextComponentString("List of mod Load in RE: Core"));
+            sender.sendMessage(new TextComponentString("\u00A7a+--List of mod Load in \u00A72RE: Core\u00A7a--+"));
             for (int i = 0; i <= 9; i++) {
-                sender.sendMessage(new TextComponentString(" id: " + i + " | ModID: " + modid[i] + " | ModName: " + modname[i]));
+                sender.sendMessage(new TextComponentString("\u00A7aid: \u00A7e" + i + "\u00A7a | ModID: \u00A7e" + modid[i] + "\u00A7a | ModName: \u00A7e" + modname[i]));
                 if (i >= numberOfMod - 1) {
                     i = 9;
                 }
             }
-            sender.sendMessage(new TextComponentString("Page 1/" + numberOfPage));
+            if(numberOfPage < 10)
+                sender.sendMessage(new TextComponentString("\u00A7a+----------Page 1/" + numberOfPage + "----------+"));
+            else sender.sendMessage(new TextComponentString("\u00A7a+----------Page 1/" + numberOfPage + "---------+"));
         }
 
         //disp all page
         if (args.length == 1 && args[0] != null) {
             int max = page(parseInt(args[0]));
             if(parseInt(args[0]) <= numberOfPage) {
-                sender.sendMessage(new TextComponentString("List of mod Load in RE: Core"));
+                sender.sendMessage(new TextComponentString("\u00A7a+--List of mod Load in \u00A72RE: Core\u00A7a--+"));
                 for (int i = max - 9; i <= max; i++) {
-                    sender.sendMessage(new TextComponentString("id: " + i + " | ModID: " + modid[i] + " | ModName: " + modname[i]));
+                    sender.sendMessage(new TextComponentString("\u00A7aid: \u00A7e" + i + "\u00A7a | ModID: \u00A7e" + modid[i] + "\u00A7a | ModName: \u00A7e" + modname[i]));
                     if (i >= numberOfMod - 1) {
                         i = max;
                     }
                 }
-                sender.sendMessage(new TextComponentString("Page " + args[0] + "/" + numberOfPage));
+                if(numberOfPage < 10)
+                    sender.sendMessage(new TextComponentString("\u00A7a+----------Page 1/" + numberOfPage + "----------+"));
+                else sender.sendMessage(new TextComponentString("\u00A7a+----------Page 1/" + numberOfPage + "---------+"));
             } else {
-                sender.sendMessage(new TextComponentString("Invalide Argument"));
+                sender.sendMessage(new TextComponentString("\u00A74Invalide Argument"));
             }
         }
     }
